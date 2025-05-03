@@ -16,7 +16,7 @@ SECRET_KEY = 'ueu^l#vw611-0y&4uyhj94r#8sx4*@24kntbopq6g$y2w6sbk('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://snapnewstest.onrender.com']
 
 
 # Application definition
@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'snapbrionews2',
-        'USER': 'postgres', 
-        'PASSWORD': os.environ.get('DB_PASSWORD'), 
-        'HOST': 'localhost',  
-        'PORT': '5432',  
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', '5432'), 
     }
 }
 
